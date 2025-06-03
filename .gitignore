@@ -2,3 +2,4 @@
 *.pem
 data/real_data.csv
 terraform.tfstate*
+project_planning.md

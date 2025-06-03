@@ -6,6 +6,8 @@
 
 This repository demonstrates infrastructure and data engineering practices using simulated versions of internal telemetry from 2000+ devices. While the actual system is proprietary, this project highlights the architecture and approach I developed.
 ---
+The fetch_metrics.py script simulates ingestion of unit telemetry data. It reads sanitized field data from unit_odometer_sample.csv, validates schema, and
+prepares it for downstream analysis.
 
 ## 🚀 Features
 
@@ -118,3 +120,4 @@ MIT License
 * [ ] Enable predictive modeling on failure rates
 * [ ] Schedule nightly S3 backups
 * [ ] Kubernetes deployment setup
+
