@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'infrasight_mock'
+    static_configs:
+      - targets: ['localhost:9100']  # Replace with real exporters in internal branch

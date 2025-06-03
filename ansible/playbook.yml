@@ -1,0 +1,7 @@
+---
+- name: Setup InfraSight monitoring stack
+  hosts: all
+  become: yes
+
+  roles:
+    - { role: setup_grafana }  # Stub: replace with actual role

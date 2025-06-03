@@ -1,0 +1,4 @@
+.env
+*.pem
+data/real_data.csv
+terraform.tfstate*
