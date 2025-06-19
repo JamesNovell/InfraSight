@@ -7,6 +7,8 @@ services:
       - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
+    depends_on:
+      - csv-exporter
 
   grafana:
     image: grafana/grafana:latest
@@ -16,3 +18,15 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
       - ./monitoring/grafana:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+
+  csv-exporter:
+    image: ricoberger/csv-exporter:latest
+    ports:
+      - "9101:9101"
+    volumes:
+      - ./data/final_metrics.csv:/csv/data.csv:ro
+    environment:
+      - CSV_FILE=/csv/data.csv
+      - CSV_DELIMITER=,

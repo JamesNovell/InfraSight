@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def main():
-    input_path = "data/unit_odometer_sample.csv"
+    input_path = "../data/unit_odometer_sample.csv"
 
     # Check if the file exists
     if not os.path.exists(input_path):
@@ -22,7 +22,7 @@ def main():
     print(df.describe())
 
     # Optional: Save cleaned or renamed output
-    output_path = "data/processed_sample.csv"
+    output_path = "../data/processed_sample.csv"
     df.to_csv(output_path, index=False)
     print(f"Processed data saved to: {output_path}")
 

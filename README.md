@@ -94,10 +94,17 @@ python scripts/clean_data.py
 
 ## 📊 Data Pipeline Flow
 
-1. **Collect Raw Data** → `fetch_metrics.py`
-2. **Clean/Transform Data** → `clean_data.py`
-3. **Ingest to Prometheus** → Exporter or bridge
-4. **Visualize in Grafana**
+1. **Ingest Sample Data** → `fetch_metrics.py`  
+   Loads and validates sanitized telemetry from `unit_odometer_sample.csv`
+
+2. **Clean & Derive Metrics** → `clean_data.py`  
+   Calculates wear rate, days active, and flags units needing maintenance
+
+3. **Visualize Results** → `visualize_metrics.py`  
+   Generates bar charts for unit usage and wear rate trends by state
+
+> 📎 *Data is static and simulated for demonstration purposes. The structure mirrors a production pipeline, but no live ingestion or cloud infrastructure is active in this branch.*
+
 
 ---
 
